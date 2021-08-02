@@ -4,34 +4,25 @@ const PicsumCard = ({ apiReducer }) => {
   const [url, setUrl] = useState([]);
   
   const data = apiReducer;
-    const urlData = data.reduce((types, urlArray) => {
-      return [ ...types, ...urlArray.download_url ]
-    }, [])
-  console.log(urlData);
+  const urlData = data.reduce((types, arr) => {
+    return [ ...types, ...arr.download_url ]
+  }, [])
+
+  const joinedData = urlData.join('');
+  const result = new Array(joinedData);
+  const finalData = 
+    result.reduce((acc, val) => acc + val);
+  console.log(finalData);
 
 
+  //const urlSetted = new Set(urlData);
+  //setUrl(urlSetted)
+  //console.log(url);
 
-
-//  const mapData = (
-    //<ul>
-      //{data.map((item) =>
-      //<li key={item.id}>
-        //{item.download_url}
-      //</li>
-      //)}
-    //</ul>
-  //);
-  //console.log(mapData);
-
-  //const reduced = data.map((curr) => curr)
-  //console.log(reduced);
-
-  //const objectData = Object.entries(data)
-  //console.log(objectData);
-  //const objectKeys = Object.keys(data);
-  //console.log(objectKeys);
-  
-
+  useEffect(() => {
+    //setUrl(urlSetted)
+    //console.log(urlSetted);
+  }, []);
 
   return	(
       <div>
