@@ -9,15 +9,17 @@ const PicsumCard = ({ apiReducer }) => {
   }, [])
 
   const joinedData = urlData.join('');
-  const result = new Array(joinedData);
-  const finalData = 
-    result.reduce((acc, val) => acc + val);
-  console.log(finalData);
+  const resultOnceJoined = new Array(joinedData);
+
+  const cleanArray = [];
+  resultOnceJoined[0]
+    .split('https://')
+    .map(element => cleanArray.push(`https:${element}`))
+
+  console.log(cleanArray);
+  
 
 
-  //const urlSetted = new Set(urlData);
-  //setUrl(urlSetted)
-  //console.log(url);
 
   useEffect(() => {
     //setUrl(urlSetted)
