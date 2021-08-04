@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchApi } from '../../redux/actions';
-import PicsumCard from '../card/PicsumCard';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchApi } from "../../redux/actions";
+import PicsumCard from "../card/picsum/PicsumCard";
 
 const Home = () => {
 
@@ -22,8 +22,7 @@ const Home = () => {
       .split('https://')
       .map(element => cleanArray.push(`https:${element}`))
 
-    const newArray = cleanArray.shift()
-    console.log(cleanArray);
+    cleanArray.shift()
     return cleanArray;
   };
 
@@ -36,11 +35,10 @@ const Home = () => {
   return	(
     <>
       <PicsumCard 
-        apiReducer={apiReducer} 
         getUrlFromApi={getUrlFromApi}
       />
     </>
-    )
+  )
 };
 
 export default Home;
