@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import clamp from "lodash-es/clamp";
 import { useSprings, animated } from "react-spring";
 import { useGesture } from "react-use-gesture";
-import "../../../assets/scss/4-layout/_picsum.scss";
+import "../../../assets/scss/3-basics/_global.scss";
 
 const PicsumCard = ({ getUrlFromApi }) => {
 
@@ -25,8 +25,8 @@ const PicsumCard = ({ getUrlFromApi }) => {
 
   return props.map(({ x, display, sc }, i) => (
     <>
-      <animated.div className="picsum" {...bind()} key={i} style={{ display, transform: x.to(x => `translate3d(${x}px,0,0)`)}}>
-        <animated.div style={{ transform: sc.to(s => `scale(${s})`), backgroundImage: `url(${urlDataFromFn[i]})` }}/>
+      <animated.div className="picsum" {...bind()} key={i} style={{ display, transform: x.interpolate(x => `translate3d(${x}px,0,0)`)}}>
+        <animated.div style={{ transform: sc.interpolate(s => `scale(${s})`), backgroundImage: `url(${urlDataFromFn[i]})` }}/>
       </animated.div>
     </>
   ))
