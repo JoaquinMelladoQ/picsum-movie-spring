@@ -1,7 +1,5 @@
-//import react from 'react';
 import { Switch, Route } from "react-router-dom";
 
-//import Header from './components/navbar/Header';
 import Home from "./components/pages/Home";
 import Cards from "./components/pages/Cards";
 
